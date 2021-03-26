@@ -7,4 +7,4 @@ def sumlist(a): #sumlist 함수 선언
         result = result + n
     return result #반복문이 끝난 후 결과 값 반환
     
-    print("합은 %d입니다." %sumlist(a)) #결과 값 출력
+print("합은 %d입니다." %sumlist(a)) #결과 값 출력
