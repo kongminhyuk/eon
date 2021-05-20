@@ -1,40 +1,6 @@
-import os
-from book import book
-
-class system:
-
-def Run(self):
-while True: 
-    key = self.SelectMenu() 
-    if key =='1':
-        self.addbook()
-    elif key =='2':
-        self.findbook()
-    elif key =='3':
-        self.modifybook()   
-    elif key =='4':
-        self.removebook()
-    elif key =='5':
-        self.ViewAll()
-    elif key =='6': 
-        print("프로그램 종료")
-        break
-    else:
-        print("다시 선택해 주세요..")
-    input("엔터키를 눌러주세요..")
-
-def SelectMenu(): #메뉴
-    os.system('cls') print("=== 도서 관리 프로그램 ===") 
-    print("1:도서 추가") 
-    print("2:도서 검색") 
-    print("3:도서 수정")
-    print("4:도서 삭제") 
-    print("5:전체 보기")
-    return input("\n메뉴 입력 ◀:")
-
 def addbook():    #도서 추가
     print("=== 도서추가 ===")
-    addbook = input("도서명, 저자, 출판연도, 출판사명, 장르: ")
+    newbook = input("도서명, 저자, 출판연도, 출판사명, 장르: ")
     with open('C:/books/input.txt','newbook') as file:
         file.write('\n'+ newbook)
         print("추가 완료.")
@@ -46,11 +12,11 @@ def findbook():   #도서 검색
     p = re.compile(key)
     for i in glob.glob(r'C:/books/input.txt'):
         with open(i, 'r') as file:
-            for x, y in enumerate(f.readlines(),1):
+            for x, y in enumerate(file.readlines(),1):
                m = p.findall(y)
                if m:
                    print("관련 도서 : %s" %y)
-           print()
+
 def modifybook():  #도서 수정
     print("=== 도서수정 ===")
     viewall()
@@ -84,6 +50,7 @@ def removebook():   #도서 삭제
 
 def viewall():    #전체 보기
     print("=== 전체보기 ===")
-    wiht open('C:/books/input.txt', 'r') as f
+    f = open('C:/books/input.txt', 'r')
     all = f.read()
     print(all)
+    f.close
