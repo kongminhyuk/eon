@@ -1,5 +1,6 @@
-import system
-def management() :
-    app = system.system()
+import book
+def a():
+    app = book.book()
     app.run()
-    management()
+
+a()
