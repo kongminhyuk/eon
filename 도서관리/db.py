@@ -1,7 +1,6 @@
 import system
 import os
 class book:
-
         def add_book(self):
                 system.addbook()
         def search_book(self):
@@ -12,7 +11,6 @@ class book:
                 system.removebook()
         def view_all(self):
                 system.viewall()
-
         def selectMenu(self):
                 os.system("cls") 
                 print("== 도서 관리 프로그램 ==") 
