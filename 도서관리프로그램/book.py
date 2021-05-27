@@ -1,15 +1,15 @@
 import system
 import os
 class book:  #클래스 book 정의
-    def add_book(self):
+    def addbook(self):
         system.addbook()
-    def find_book(self):
+    def findbook(self):
         system.findbook()
-    def modify_book(self):
+    def modifybook(self):
         system.modifybook()    
-    def remove_book(self):
+    def removebook(self):
         system.removebook()
-    def view_all(self):
+    def viewall(self):
         system.viewall()
     def SelectMenu(self):
         os.system('cls') 
@@ -21,6 +21,9 @@ class book:  #클래스 book 정의
         print("5:전체 보기")
         print("6:프로그램 종료")
         print("==========================")
+        return self.new_method()
+
+    def new_method(self):
         return input("\n메뉴 입력:")
     def run(self):
         while True:
@@ -37,7 +40,7 @@ class book:  #클래스 book 정의
                 self.viewall()
             elif key == '6':
                 print('프로그램을 종료합니다.')
-                break    
+                break
             else:
                 print("잘못 입력하셨습니다.")
             input("엔터 키를 누르세요.")
