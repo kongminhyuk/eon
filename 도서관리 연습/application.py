@@ -9,9 +9,9 @@ class application:
             elif key == 2:
                 self.find_book()
             elif key == 3:
-                self.search_book()    
+                self.find_book()    
             elif key == 4:
-                self.correct_book()
+                self.crrorectbook()
             elif key == 5:
                 self.remove_book()   
             elif key == 6:
@@ -95,7 +95,7 @@ class application:
             print("존재하지 않는 도서입니다.") 
             return 
         self.ViewBook(book)
-    def correctbook():
+    def correctbook(self):
         new_text = ''
         promble = input('문제 단어:')
         new_word = input('변경 단어:')
