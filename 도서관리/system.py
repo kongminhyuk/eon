@@ -19,11 +19,11 @@ def searchbook():
             if b in l:
                 print(l, end = "")
     elif a==2:
-        print("1:제목") 
-        print("2:저자") 
-        print("3:출판연도")
-        print("4:출판사")
-        print("5:장르")  
+        print("0:제목") 
+        print("1:저자") 
+        print("2:출판연도")
+        print("3:출판사")
+        print("4:장르")  
         c=int(input("\n ◀:"))
         with open("C:/books/input.txt","r") as file:
             while True:
@@ -42,8 +42,12 @@ def searchbook():
                 elif c == 5:
                     print(list[4])
                 else:
-                    print("잘못 입력하셨습니다.")                  
+                    print("잘못 입력하셨습니다.")
+    else:
+        print("잘못 입력하셨습니다.")
+
 def correctbook():
+    print("===도서 수정===")
     viewall()
     new_text = ''
     problem = input('수정하려는 부분을 입력하세요:')
@@ -62,6 +66,7 @@ def correctbook():
     print('변경 완료')
 
 def removebook():
+    print("===도서 삭제===")
     title = input("삭제할 도서의 제목:")
     with open("C:/books/input.txt", 'r') as f:
         data = f.readlines()
