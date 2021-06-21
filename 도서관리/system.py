@@ -7,44 +7,37 @@ def addbook():
      print('추가완료')
 
 def searchbook():
-    print("===도서 검색===")
-    print("1.도서 검색")
-    print("2.개별 검색")
-    a=int(input("\n ◀: "))
-    if a==1:
-        b = input("책 정보 : ")
-        with open("C:/books/input.txt","r") as file:
-            line = file.readlines()
-        for l in line:
-            if b in l:
-                print(l, end = "")
-    elif a==2:
-        print("0:제목") 
-        print("1:저자") 
-        print("2:출판연도")
-        print("3:출판사")
-        print("4:장르")  
-        c=int(input("\n ◀:"))
-        with open("C:/books/input.txt","r") as file:
-            while True:
-                line = file.readline()
-                if not line:
-                    break
-                list = line.split(" ")
-                if c == 1:
-                    print(list[0])
-                elif c == 2:
-                    print(list[1])
-                elif c == 3:
-                    print(list[2])
-                elif c == 4:
-                    print(list[3])
-                elif c == 5:
-                    print(list[4])
-                else:
-                    print("잘못 입력하셨습니다.")
-    else:
-        print("잘못 입력하셨습니다.")
+    print("===일반 검색===")
+   
+    a = input("책 정보 : ")
+    with open("C:/books/input.txt","r") as file:
+        line = file.readlines()
+    for l in line:
+        if a in l:
+            print(l, end = "")
+    
+def searchbook_2():
+    print("===개별 검색===")
+    with open("C:/books/input.txt","r") as file:
+        c=int(input("1:제목 2:저자 3:출판연도 4:출판사 5:장르\n ◀:"))
+        while True:
+            line = file.readline()
+            if not line:
+                break
+            list = line.split(" ")
+            if c == 1:
+                print(list[0])
+            elif c == 2:
+                print(list[1])
+            elif c == 3:
+                print(list[2])
+            elif c == 4:
+                print(list[3])
+            elif c == 5:
+                print(list[4])
+            else:
+                print("잘못 입력하셨습니다.")
+    searchbook()
 
 def correctbook():
     print("===도서 수정===")
