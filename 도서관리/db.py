@@ -1,3 +1,4 @@
+import sys
 import system
 import os
 class book:
@@ -5,6 +6,8 @@ class book:
                 system.addbook()
         def search_book(self):
                 system.searchbook()
+        def search_book_2(self):
+                system.searchbook_2()
         def correct_book(self):
                 system.correctbook()    
         def remove_book(self):
@@ -27,7 +30,13 @@ class book:
                         if  key == 1:
                                 self.add_book()
                         elif key == 2:
-                                self.search_book()
+                                b = int(input('1.일반검색 \n2.개별검색 \n ◀:'))
+                                if b == 1:
+                                        self.search_book()  
+                                elif b == 2:
+                                        self.search_book_2()
+                                else:
+                                        print('잘못 입력하였습니다.')
                         elif key == 3:
                                 self.correct_book()    
                         elif key == 4:
